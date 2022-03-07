@@ -5,9 +5,50 @@ const app = express();
 
 app.get("/", (req, res, next) => {
     res.json({
-        message: "Did you GET IT!!"
+        message: "Using GET /",
+        metadata: {
+            method: req.method,
+            port: 4000,
+            host: "localhost:4000"
+        }
     });
-})
+});
+
+// post
+app.post("/", (req, res, next) => {
+    res.json({
+        message: "Using POST /",
+        metadata: {
+            method: req.method,
+            port: 4000,
+            host: "localhost:4000"
+        }
+    });
+});
+
+// patch
+app.patch("/", (req, res, next) => {
+    res.json({
+        message: "Using PATCH /",
+        metadata: {
+            method: req.method,
+            port: 4000,
+            host: "localhost:4000"    
+        }
+    });
+});
+
+// delete
+app.delete("/", (req, res, next) => {
+    res.json({
+        message: "Using DELETE /",
+        metadata: {
+            method: req.method,
+            port: 4000,
+            host: "localhost:4000"   
+        }
+    });
+});
 
 /* middleware modules for error handling
 
